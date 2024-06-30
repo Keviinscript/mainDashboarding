@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../assets/style.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet" />
+
+    <title>CrestWay Holdings Transfer Receipt</title>
+    <style>
+      body {
+        font-family: Poppins, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      .receipt-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: auto;
+      }
+      .header {
+        text-align: start;
+        margin-bottom: 20px;
+      }
+      .header img {
+        max-width: 250px;
+      }
+      .title {
+        font-size: 21px;
+        margin-top: 15px;
+        font-weight: 500;
+      }
+      .subtitle {
+        font-size: 15px;
+        color: #555;
+        font-weight: 300;
+      }
+      .status {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+        color: green;
+        margin: 20px 0;
+      }
+      .details {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .details th,
+      .details td {
+        text-align: left;
+        padding: 8px;
+        border: 1px solid #ddd;
+      }
+      .print-button {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .print-button button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4b0082;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .print-button button:hover {
+        background-color: #4b0082;
+      }
+    </style>
+    <script>
+      function printReceipt() {
+        window.print();
+      }
+    </script>
+  </head>
+  <body>
+    <div class="my-2">
+      <a href="./index.html">
+        <svg
+          class="w-6 h-6 lg:w-5 lg:h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512">
+          <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path
+            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z" />
+        </svg>
+      </a>
+    </div>
+    <div class="receipt-container">
+      <div class="header">
+        <img src="../assets/img/CrestWayHoldinglogo/cover.jpg" alt="Bank Logo" />
+        <div class="title">Online Banking</div>
+        <div class="subtitle">Transaction Receipt</div>
+      </div>
+      <div class="status">
+        Transfer Successful
+        <p class="text-sm text-gray-600 font-light">2024-06-21 12:34 PM</p>
+      </div>
+      <table class="details">
+        <tr>
+          <th class="text-base font-semibold text-gray-600">Amount</th>
+          <td class="text-base font-normal text-gray-950">
+            $<span>1000.00</span>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-base font-semibold text-gray-600">
+            Beneficiary Account Name
+          </th>
+          <td class="text-base font-normal text-gray-950">John Doe</td>
+        </tr>
+        <tr>
+          <th class="text-base font-semibold text-gray-600">
+            Beneficiary Account Number
+          </th>
+          <td class="text-base font-normal text-gray-950">1234567890</td>
+        </tr>
+        <tr>
+          <th class="text-base font-semibold text-gray-600">
+            Beneficiary Bank
+          </th>
+          <td class="text-base font-normal text-gray-950">Bank of Example</td>
+        </tr>
+        <tr>
+          <th class="text-base font-semibold text-gray-600">Country</th>
+          <td class="text-base font-normal text-gray-950">USA</td>
+        </tr>
+        <tr>
+          <th class="text-base font-semibold text-gray-600">Sender Details</th>
+          <td class="text-base font-normal text-gray-950">Jane Smith</td>
+        </tr>
+      </table>
+      <div class="memo mt-4 text-xs font-light text-gray-900">
+        This is an electronic receipt of a transaction and does not require any
+        signature. The authenticity of this transaction can be confirmed with
+        the bank. For any other assistance, kindly contact our customer care
+        service at
+        <a
+          class="text-customPurple font-semibold"
+          href="mailto:support@mybank.com"
+          >support@mybank.com</a
+        >.
+      </div>
+      <div class="print-button">
+        <button onclick="printReceipt()">Share Receipt</button>
+      </div>
+    </div>
+
+    <!-- <script src="./js/script.js"></script> -->
+    <!-- <script src="./js/transactions.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/c76706220f.js"
+      crossorigin="anonymous"></script>
+  </body>
+</html>

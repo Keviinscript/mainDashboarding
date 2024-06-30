@@ -1,0 +1,18 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Cormorant-Medium
+font link: https://fonts.google.com/specimen/Cormorant
+font author: Christian Thalmann
+font author site: http://www.myfonts.com/foundry/Catharsis_Fonts/
+
+
+icon designer: Flatart
+icon designer link: /Flatart
+        
+
+fontColor: {"hex":"#4E1A70"}
+bgColor: {"hex":"transparent"}
+iconColor: {"hex":"#4E1A70"}
+
+      

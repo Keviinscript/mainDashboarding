@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "postcss assets/styles.css -o assets/style.css",
-    "watch": "postcss assets/styles.css -o assets/style.css --watch"
+    "build": "postcss ./assets/styles.css -o ./assets/style.css",
+    "watch": "postcss ./assets/styles.css -o ./assets/style.css --watch"
   },
   "keywords": [],
   "author": "",

@@ -22,7 +22,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     
-    <title>IMF code- CrestWay Holdings</title>
+    <title>Tax Code - CrestWay Holdings</title>
+    <link rel="shortcut icon" href="../assets/img/CrestWayHoldinglogo/vector/default-monochrome.svg" type="image/x-icon">
 </head>
 <body class="font-poppins">
 
@@ -66,41 +67,42 @@
                                 IMF
                             </span>
                         </li>
-                            <li class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-100 after:border-4 after:inline-block">
-                            <span class="tracking-tighter font-semibold text-gray-500 text-base flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12  shrink-0">
+                            <li class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-teal-100 after:border-4 after:inline-block">
+                            <span class="tracking-tighter font-semibold text-customTeal text-base flex items-center justify-center w-10 h-10 bg-teal-100 rounded-full lg:h-12 lg:w-12  shrink-0">
                                TAX
                             </span>
                         </li>
                         <li class="flex items-center w-full">
-                             <span class="tracking-tighter font-semibold text-gray-500 text-base flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12  shrink-0">
+                            <span class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12  shrink-0">
+                               <span class="tracking-tighter font-semibold text-gray-500 text-base flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12  shrink-0">
                                OTP
                             </span></span>
                         </li>
                     </ol>
 
                     <div class="my-4">
-                        <h1 class="text-gray-800 text-lg tracking-tight font-medium">IMF CODE</h1>
+                        <h1 class="text-gray-800 text-lg tracking-tight font-medium">TAX CODE</h1>
                     </div>
 
                     <form action="#">
                         <div>
-                            <label for="Beneficiary_name" class="block mb-2 text-sm font-medium text-gray-600 ">To proceed with your transfer, please provide your IMF code.</label>
+                            <label for="Beneficiary_name" class="block mb-2 text-sm font-medium text-gray-600 ">To proceed with your transfer, please provide your TAX code.</label>
                              <div class="relative mb-6">
                                 <span class="absolute  inset-y-3 start-0 flex items-center ps-3.5  w-4 h-4 text-gray-500  password-toggle-icon"> 
                                     <i class="fa-regular fa-eye "> </i>
                                 </span>
                                 
-                                <input type="password" id="imf-field" name="imf" value="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-customTeal focus:border-customTring-customTeal block w-full ps-10 p-2.5  " placeholder="••••••" required>
+                                <input type="password" id="tax-field" name="tax" value="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-customTeal focus:border-customTring-customTeal block w-full ps-10 p-2.5  " placeholder="••••••" required>
 
-                                <!-- <input type="password" id="imf-field" name="imf" value="" class="bg-gray-50 border-2 border-red-600 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full ps-10 p-2.5  " placeholder="••••••" required>
-                                <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Invalid IMF CODE</span> try again or contact customer care.</p> -->
+                                <!-- <input type="password" id="tax-field" name="tax" value="" class="bg-gray-50 border-2 border-red-600 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full ps-10 p-2.5  " placeholder="••••••" required>
+                                <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Invalid TAX CODE</span> try again or contact customer care.</p> -->
 
 
 
                             </div>
                                   
                                     <script>
-                                        const passwordField = document.getElementById("imf-field");
+                                        const passwordField = document.getElementById("tax-field");
                                         const togglePassword = document.querySelector(".password-toggle-icon i");
 
                                         togglePassword.addEventListener("click", function () {
@@ -115,7 +117,7 @@
                                         }
                                         });
                                     </script>
-                        <button  class="text-white bg-customPurple  focus:ring-4 fo focus:ring-customPurple font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
+                        <button  class="text-white bg-customPurple  focus:ring-4 fo focus:ring-customPurple font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Next</button>
                     </form>
 
                 </div>
@@ -138,26 +140,26 @@
 
 
     <!-- navigation -->
-    <div class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-white ">
+    <div class=" fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-white ">
         <div class="grid h-full max-w-lg grid-cols-5 mx-auto font-medium">
-            <a href="./index.html" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100  group">
+            <a href="/" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100  group">
                 
                 <svg class="w-6 h-6 mb-2 text-gray-500  group-hover:text-blue-600 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#6b7280" d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c.2 35.5-28.5 64.3-64 64.3H128.1c-35.3 0-64-28.7-64-64V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24zM352 224a64 64 0 1 0 -128 0 64 64 0 1 0 128 0zm-96 96c-44.2 0-80 35.8-80 80c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16c0-44.2-35.8-80-80-80H256z"/></svg>
                 <span class="text-sm text-gray-500  group-hover:text-customPurple ">Home</span>
             </a>
-            <a href="./transfer.html" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100  group">
+            <a href="/transfer" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100  group">
                
                 <svg class="w-6 h-6 mb-2 text-gray-500  group-hover:text-blue-600 " aria-hidden="true"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#4b0082" d="M535 41c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l64 64c4.5 4.5 7 10.6 7 17s-2.5 12.5-7 17l-64 64c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l23-23L384 112c-13.3 0-24-10.7-24-24s10.7-24 24-24l174.1 0L535 41zM105 377l-23 23L256 400c13.3 0 24 10.7 24 24s-10.7 24-24 24L81.9 448l23 23c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L7 441c-4.5-4.5-7-10.6-7-17s2.5-12.5 7-17l64-64c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9zM96 64H337.9c-3.7 7.2-5.9 15.3-5.9 24c0 28.7 23.3 52 52 52l117.4 0c-4 17 .6 35.5 13.8 48.8c20.3 20.3 53.2 20.3 73.5 0L608 169.5V384c0 35.3-28.7 64-64 64H302.1c3.7-7.2 5.9-15.3 5.9-24c0-28.7-23.3-52-52-52l-117.4 0c4-17-.6-35.5-13.8-48.8c-20.3-20.3-53.2-20.3-73.5 0L32 342.5V128c0-35.3 28.7-64 64-64zm64 64H96v64c35.3 0 64-28.7 64-64zM544 320c-35.3 0-64 28.7-64 64h64V320zM320 352a96 96 0 1 0 0-192 96 96 0 1 0 0 192z"/></svg>
                 <span class="text-sm  text-customPurple  group-hover:text-customPurple ">Transfer</span>
             </a>
-             <div class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100  group">
+           <div class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100  group">
                <img class="w-14 h-14  " src="../assets/img/CrestWayHoldinglogo/vector/default-monochrome.svg" alt="">
             </div>
-            <a href="./cards.html" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100  group">
+            <a href="/cards" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100  group">
                 <svg class="w-5 h-5 mb-2 text-gray-500  group-hover:text-blue-600 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#6b7280" d="M64 32C28.7 32 0 60.7 0 96v32H576V96c0-35.3-28.7-64-64-64H64zM576 224H0V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V224zM112 352h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm112 16c0-8.8 7.2-16 16-16H368c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-8.8 0-16-7.2-16-16z"/></svg>
                 <span class="text-sm text-gray-500  group-hover:text-customPurple ">Cards</span>
             </a>
-            <a href="./profile.html" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100  group">
+            <a href="/profile" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100  group">
                
                 <svg class="w-5 h-5 mb-2 text-gray-500  group-hover:text-blue-600 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#6b7280" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
                 <span class="text-sm text-gray-500  group-hover:text-customPurple ">Profile</span>

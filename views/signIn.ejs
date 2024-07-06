@@ -20,6 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet" />
     <title>Sign In - CrestWay Holdings</title>
+    <link rel="shortcut icon" href="../assets/img/CrestWayHoldinglogo/vector/default-monochrome.svg" type="image/x-icon">
     <style>
       body,
       html {
@@ -89,13 +90,16 @@
           CrestWay Holdings
         </a>
         <div
-          class="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">
+          class="w-full bg-white rounded-lg shadow md:mt-0 max-w-md xl:p-0">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1
               class="text-xl font-semibold leading-tight tracking-tight text-gray-800 md:text-2xl">
               Sign in to your account
             </h1>
-            <form class="space-y-4 md:space-y-6" action="#">
+            <form class="space-y-4 md:space-y-6" action="/signin" method="post">
+              <div class="px-5 mx-auto pb-3">
+                  <%- messages('messages') %> 
+              </div>
               <div>
                 <label
                   for="email"
@@ -132,7 +136,7 @@
                       aria-describedby="remember"
                       type="checkbox"
                       class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300"
-                      required />
+                       />
                   </div>
                   <div class="ml-3 text-sm">
                     <label for="remember" class="text-gray-500"

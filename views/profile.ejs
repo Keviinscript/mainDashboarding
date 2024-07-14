@@ -31,13 +31,14 @@
    
     </style>
     <title>Profile - CrestWay Holdings</title>
+    <link rel="shortcut icon" href="../assets/img/CrestWayHoldinglogo/vector/default-monochrome.svg" type="image/x-icon">
   </head>
   <body class="font-poppins">
     <!-- logo -->
     <div class="bg-white py-3">
       <div class="flex items-center justify-between mx-auto w-[95%]">
         <div class="logo">
-          <a href="../index.html"
+          <a href="/"
             ><img class="" src="../assets/img/CrestWayHoldinglogo/cover.jpg" alt=""
           /></a>
         </div>
@@ -71,7 +72,7 @@
         <div class="bg-white shadow-md rounded-lg p-4 max-w-lg w-full my-4">
           <div class="flex flex-col items-center mb-6">
             <img
-              src="../assets/img/CrestWayHoldinglogo/profilepic.jpg"
+              src="<%= user.picture %>"
               alt="User Image"
               class="w-24 h-24 rounded-full mb-4" />
             <h1 class="text-2xl text-gray-600 font-bold">Profile</h1>
@@ -83,7 +84,7 @@
             <input
               type="text"
               id="fullName"
-              value="John Ekene Doe"
+              value="<%= user.name %>"
               class="uppercase font-light text-gray-800 bg-transparent w-2/3 px-3 py-2 focus:outline-none border-none text-end"
               readonly />
           </div>
@@ -98,7 +99,7 @@
             <input
               type="text"
               id="gender"
-              value="Male"
+              value="<%= user.Gender %>"
               class="font-light text-gray-800 bg-transparent w-2/3 px-3 py-2 focus:outline-none border-none text-end"
               readonly />
           </div>
@@ -109,7 +110,7 @@
             <input
               type="text"
               id="dob"
-              value="1990-01-01"
+              value="<%= user.DateOfBirth %>"
               class="font-light text-gray-800 bg-transparent w-2/3 px-3 py-2 focus:outline-none border-none text-end"
               readonly />
           </div>
@@ -120,7 +121,7 @@
             <input
               type="email"
               id="email"
-              value="john.doe@example.com"
+              value="<%= user.email %>"
               class="font-light text-gray-800 bg-transparent w-2/3 px-3 py-2 focus:outline-none border-none text-end"
               readonly />
           </div>
@@ -131,7 +132,7 @@
             <input
               type="text"
               id="address"
-              value="1234 Main St, Anytown, USA"
+              value="<%= user.address %>"
               class="uppercase font-light text-gray-800 bg-transparent w-2/3 px-3 py-2 focus:outline-none border-none text-end"
               readonly />
           </div>
@@ -148,7 +149,7 @@
           <input
             type="text"
             id="accountNumber"
-            value="123456789"
+            value="<%= user.account.number %>"
             class="font-light text-gray-800 bg-transparent w-2/3 px-3 py-2 focus:outline-none border-none text-end"
             readonly />
         </div>
@@ -213,7 +214,7 @@
       class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-white">
       <div class="grid h-full max-w-lg grid-cols-5 mx-auto font-medium">
         <a
-          href="../index.html"
+          href="/"
           class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100 group">
           <svg
             class="w-6 h-6 mb-2 text-gray-500"
@@ -230,7 +231,7 @@
           >
         </a>
         <a
-          href="./transfer.html"
+          href="/transfer"
           class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100 group">
           <svg
             class="w-6 h-6 mb-2 text-gray-500"
@@ -254,7 +255,7 @@
             alt="" />
         </div>
         <a
-          href="./cards.html"
+          href="/cards"
           class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100 group">
           <svg
             class="w-5 h-5 mb-2 text-gray-500"
@@ -271,7 +272,7 @@
           >
         </a>
         <a
-          href="./profile.html"
+          href="/profile"
           class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100 group">
           <svg
             class="w-5 h-5 mb-2"

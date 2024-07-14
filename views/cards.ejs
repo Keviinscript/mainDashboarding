@@ -29,13 +29,14 @@
       rel="stylesheet" />
 
     <title>Cards - CrestWay Holdings</title>
+    <link rel="shortcut icon" href="../assets/img/CrestWayHoldinglogo/vector/default-monochrome.svg" type="image/x-icon">
   </head>
   <body class="font-poppins">
     <!-- logo -->
     <div class="bg-white py-3">
       <div class="flex items-center justify-between mx-auto w-[95%]">
         <div class="logo">
-          <a href="../index.html"
+          <a href="/"
             ><img
               class=""
               src="../assets/img/CrestWayHoldinglogo/cover.jpg"
@@ -45,7 +46,7 @@
         <div class="relative pr-2">
           <img
             class="w-9 h-9 rounded-full"
-            src="../assets/img/CrestWayHoldinglogo/profilepic.jpg"
+            src="<%= user.picture %>"
             alt="" />
           <span
             class="bottom-0 left-7 absolute w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"></span>
@@ -441,7 +442,7 @@
                             Crypto
                           </text>
                           <text x="45" y="320" font-size="23" font-weight="600">
-                            John Doe
+                            <%= user.name %>
                           </text>
                           <text
                             x="470"
@@ -517,7 +518,7 @@
           <span class="text-xs font-light text-gray-600">USDT</span>
         </h1>
         <p class="text-bold text-[30px] text-gray-800">
-          $<span>2,465.93</span>
+          $<span><%= user.account.cryptoBalance %></span>
         </p>
         <div>
           <button
@@ -770,7 +771,7 @@
       class="fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-white">
       <div class="grid h-full max-w-lg grid-cols-5 mx-auto font-medium">
         <a
-          href="./index.html"
+          href="/"
           class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100 group">
           <svg
             class="w-6 h-6 mb-2 text-gray-500 group-hover:text-blue-600"
@@ -787,7 +788,7 @@
           >
         </a>
         <a
-          href="./transfer.html"
+          href="/transfer"
           class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100 group">
           <svg
             class="w-6 h-6 mb-2 text-gray-500 group-hover:text-blue-600"
@@ -811,7 +812,7 @@
             alt="" />
         </div>
         <a
-          href="./cards.html"
+          href="/cards"
           class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100 group">
           <svg
             class="w-5 h-5 mb-2 text-gray-500 group-hover:text-blue-600"
@@ -828,7 +829,7 @@
           >
         </a>
         <a
-          href="./profile.html"
+          href="/profile"
           class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-100 group">
           <svg
             class="w-5 h-5 mb-2 text-gray-500 group-hover:text-blue-600"

@@ -37,7 +37,7 @@
                 /></a>
               </div>
                <div class="relative pr-2">
-                        <img class="w-9 h-9 rounded-full" src="../assets/img/CrestWayHoldinglogo/profilepic.jpg" alt="">
+                        <img class="w-9 h-9 rounded-full" src="<%= user.picture %>" alt="">
                         <span class="bottom-0 left-7 absolute  w-2.5 h-2.5 bg-green-500 border-2 border-white  rounded-full"></span></div>
 
             </div>
@@ -84,13 +84,13 @@
                     <div id="dropdown" class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                         <ul class="py-2" aria-labelledby="dropdownButton">
                             <li>
-                                <a href="#" class="block px-4 py-2 text-sm text-red-800">Sign Out</a>
+                                <a href="/logout" class="block px-4 py-2 text-sm text-red-800">Sign Out</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="flex flex-col mb-10 w-[92%] mx-auto items-center text-center">
-                    <h3 class="mb-1 text-2xl font-semibold text-white">Hi, <span>John Ekene Doe</span>!</h3>
+                    <h3 class="mb-1 text-2xl font-semibold text-white">Hi, <span><%= user.name %></span>!</h3>
                     <span class="text-xs text-white font-extralight">
                         Your IP Address <span class="font-semibold" id="location"></span> was logged on 
                         <span class="font-semibold" id="date"></span> to monitor and secure your transactions
@@ -98,14 +98,14 @@
                     <div class="flex justify-between w-[95%] mt-4 md:mt-6">
                         <div class="text-white space-y-1">
                             <span class="text-xs uppercase font-extralight">Balance</span>
-                            <div class="text-2xl font-bold">$<span>781,047.56</span></div>
+                            <div class="text-2xl font-bold">$<span><%= user.account.balance%></span></div>
                             <div class="w-full bg-gray-200 rounded-full h-1">
                                 <div class="bg-customTeal h-1 rounded-full" style="width: 85%"></div>
                             </div>
                         </div>
                         <div class="text-white space-y-1">
                             <span class="text-xs uppercase font-extralight">Withdrawals</span>
-                            <div class="text-2xl font-bold">$<span>50,047.12</span></div>
+                            <div class="text-2xl font-bold">$<span><%= user.account.withdrawals%></span></div>
                             <div class="w-full bg-gray-200 rounded-full h-1">
                                 <div class="bg-customTeal h-1 rounded-full" style="width: 25%"></div>
                             </div>
@@ -114,7 +114,7 @@
                 </div>
                 <div class="absolute bottom-1 left-4">
                     <div class="pl-2">
-                        <span class="text-xs text-white font-light">Account: <span class="font-semibold">8162146893</span></span>
+                        <span class="text-xs text-white font-light">Account: <span class="font-semibold"><%= user.account.number%></span></span>
                     </div>
                 </div>
             </div>
@@ -184,7 +184,7 @@
                                         <h1 class="text-gray-500 text-sm font-normal">Account Number</h1>
                                     </div>
                                     <div>
-                                        <span class="text-gray-800 text-base font-semibold">8162146893</span>
+                                        <span class="text-gray-800 text-base font-semibold"><%= user.account.number%></span>
                                     </div>
                                 </div>
                                 <div class="my-2 flex justify-between items-center w-[90%] mx-auto">
@@ -200,7 +200,7 @@
                                         <h1 class="text-gray-500 text-sm font-normal">Name</h1>
                                     </div>
                                     <div>
-                                        <span class="text-gray-800 text-base font-semibold">John Ekene Doe</span>
+                                        <span class="text-gray-800 text-base font-semibold"><%= user.name%></span>
                                     </div>
                                 </div>
                               

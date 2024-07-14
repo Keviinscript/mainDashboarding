@@ -104,30 +104,79 @@ app.post('/signin', async (req,res)=>{
     })
 })
 
-app.get('/', protectRoute, (req,res)=>{
-    res.render('index')
+app.get('/', protectRoute, async (req,res)=>{
+    try {
+        const auser = req.user.user.email
+        const user = await userSchema.findOne({email: auser}).populate('pin').populate('transaction').populate('account')
+        res.render('index', {user: user})
+    } catch (error) {
+        console.log(error)
+    }
 })
 
-app.get('/profile',protectRoute, (req,res)=>{
-    res.render('profile')
+app.get('/logout', (req,res)=>{
+    res.clearCookie('logintoken')
+    res.redirect('/')
 })
 
-app.get('/cards', protectRoute, (req,res)=>{
-    res.render('cards')
+app.get('/profile',protectRoute, async (req,res)=>{
+    try {
+        const auser = req.user.user.email
+        const user = await userSchema.findOne({email: auser}).populate('pin').populate('transaction').populate('account')
+        res.render('profile', {user: user})
+    } catch (error) {
+        console.log(error)
+    }
 })
 
-app.get('/transfer', protectRoute, (req,res)=>{
-    res.render('transfer')
+app.get('/cards', protectRoute, async (req,res)=>{
+    try {
+        const auser = req.user.user.email
+        const user = await userSchema.findOne({email: auser}).populate('pin').populate('transaction').populate('account')
+        res.render('cards', {user: user})
+    } catch (error) {
+        console.log(error)
+    }
 })
 
-app.get('/imf', protectRoute, (req,res)=>{
-    res.render('imf')
+app.get('/transfer', protectRoute, async (req,res)=>{
+    try {
+        const auser = req.user.user.email
+        const user = await userSchema.findOne({email: auser}).populate('pin').populate('transaction').populate('account')
+        res.render('transfer', {user: user})
+    } catch (error) {
+        console.log(error)
+    }
 })
-app.get('/otp',protectRoute, (req,res)=>{
-    res.render('otp')
+
+app.get('/imf', protectRoute, async (req,res)=>{
+    try {
+        const auser = req.user.user.email
+        const user = await userSchema.findOne({email: auser}).populate('pin').populate('transaction').populate('account')
+        res.render('imf', {user: user})
+    } catch (error) {
+        console.log(error)
+    }
 })
-app.get('/tax',protectRoute, (req,res)=>{
-    res.render('tax')
+
+app.get('/otp',protectRoute,  async (req,res)=>{
+    try {
+        const auser = req.user.user.email
+        const user = await userSchema.findOne({email: auser}).populate('pin').populate('transaction').populate('account')
+        res.render('otp', {user: user})
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+app.get('/tax',protectRoute,  async (req,res)=>{
+    try {
+        const auser = req.user.user.email
+        const user = await userSchema.findOne({email: auser}).populate('pin').populate('transaction').populate('account')
+        res.render('tax', {user: user})
+    } catch (error) {
+        console.log(error)
+    }
 })
 
 const port = process.env.PORT || 9000

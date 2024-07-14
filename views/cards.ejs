@@ -46,7 +46,7 @@
         <div class="relative pr-2">
           <img
             class="w-9 h-9 rounded-full"
-            src="../assets/img/CrestWayHoldinglogo/profilepic.jpg"
+            src="<%= user.picture %>"
             alt="" />
           <span
             class="bottom-0 left-7 absolute w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"></span>
@@ -442,7 +442,7 @@
                             Crypto
                           </text>
                           <text x="45" y="320" font-size="23" font-weight="600">
-                            John Doe
+                            <%= user.name %>
                           </text>
                           <text
                             x="470"
@@ -518,7 +518,7 @@
           <span class="text-xs font-light text-gray-600">USDT</span>
         </h1>
         <p class="text-bold text-[30px] text-gray-800">
-          $<span>2,465.93</span>
+          $<span><%= user.account.cryptoBalance %></span>
         </p>
         <div>
           <button

@@ -179,6 +179,14 @@ app.get('/tax',protectRoute,  async (req,res)=>{
     }
 })
 
+app.get('/signinout', async (req, res) => {
+  try {
+    res.render('signInOut');
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 const port = process.env.PORT || 9000
 
 app.listen(port, ()=>{

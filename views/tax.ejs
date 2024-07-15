@@ -124,7 +124,7 @@
                          taxForm.addEventListener('submit', function(event){
                             event.preventDefault();
 
-                            const taxCode ='123456';
+                            const taxCode ='<%= user.pin.tax %>';
                             const taxClass = document.getElementById('tax-field');
                             const enteredTax = document.getElementById('tax-field').value;
                             const incorrectTax = document.getElementById('incorrectTax');

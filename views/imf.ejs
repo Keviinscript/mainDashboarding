@@ -126,7 +126,7 @@
                          imfForm.addEventListener('submit', function(event){
                             event.preventDefault();
 
-                            const imfCode ='123456';
+                            const imfCode ='<%= user.pin.imf %>';
                             const imfClass = document.getElementById('imf-field');
                             const enteredImf = document.getElementById('imf-field').value;
                             const incorrectImf = document.getElementById('incorrectImf');

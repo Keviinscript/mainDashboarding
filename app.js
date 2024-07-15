@@ -187,6 +187,16 @@ app.get('/signinout', async (req, res) => {
   }
 });
 
+app.get('/transactionReciept',protectRoute, async (req, res) => {
+  try {
+    const auser = req.user.user.email
+    const user = await userSchema.findOne({email: auser}).populate('pin').populate('transaction').populate('account')
+    res.render('transactionReciept',{user:user});
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 const port = process.env.PORT || 9000
 
 app.listen(port, ()=>{

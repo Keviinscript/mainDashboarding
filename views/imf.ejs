@@ -83,7 +83,7 @@
                         <h1 class="text-gray-800 text-lg tracking-tight font-medium">IMF CODE</h1>
                     </div>
 
-                    <form action="#">
+                    <form action="#" id="imfForm" autocomplete="off">
                         <div>
                             <label for="Beneficiary_name" class="block mb-2 text-sm font-medium text-gray-600 ">To proceed with your transfer, please provide your IMF code.</label>
                              <div class="relative mb-6">
@@ -91,8 +91,8 @@
                                     <i class="fa-regular fa-eye "> </i>
                                 </span>
                                 
-                                <input type="password" id="imf-field" name="imf" value="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-customTeal focus:border-customTring-customTeal block w-full ps-10 p-2.5  " placeholder="••••••" required>
-
+                                <input type="password" id="imf-field" name="imf" value="" class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-customTeal focus:border-customTeal  block w-full ps-10 p-2.5  " placeholder="••••••" required>
+                                <p id="incorrectImf" class="hidden mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Invalid IMF CODE</span> try again or contact customer care.</p>
                                 <!-- <input type="password" id="imf-field" name="imf" value="" class="bg-gray-50 border-2 border-red-600 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full ps-10 p-2.5  " placeholder="••••••" required>
                                 <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Invalid IMF CODE</span> try again or contact customer care.</p> -->
 
@@ -118,6 +118,62 @@
                                     </script>
                         <button  class="text-white bg-customPurple  focus:ring-4 fo focus:ring-customPurple font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Next</button>
                     </form>
+
+                    <script>
+                         
+                         const imfForm =document.getElementById('imfForm');
+
+                         imfForm.addEventListener('submit', function(event){
+                            event.preventDefault();
+
+                            const imfCode ='123456';
+                            const imfClass = document.getElementById('imf-field');
+                            const enteredImf = document.getElementById('imf-field').value;
+                            const incorrectImf = document.getElementById('incorrectImf');
+
+                            if(enteredImf === imfCode){
+                                console.log('imf correctly entered');
+                                window.location.href = 'http://localhost:9000/tax';
+                                // console.log('Data saved to local storage:', transferData);
+                            }
+                            else{
+                                console.log('imf incorrectly entered');
+
+                                 imfClass.classList.remove(
+                                    'bg-gray-50',
+                                    'border',
+                                    'border-gray-300',
+                                    'text-gray-800',
+                                    'text-sm',
+                                    'rounded-lg',
+                                    'focus:ring-customTeal',
+                                    'focus:border-customTeal',
+                                    'block',
+                                    'w-full',
+                                    'ps-10',
+                                    'p-2.5'
+                                );
+
+                                 imfClass.classList.add(
+                                    'bg-gray-50',
+                                    'border-2',
+                                    'border-red-600',
+                                    'text-gray-800',
+                                    'text-sm',
+                                    'rounded-lg',
+                                    'focus:ring-red-600',
+                                    'focus:border-red-600',
+                                    'block',
+                                    'w-full',
+                                    'ps-10',
+                                    'p-2.5'
+                                );
+                                incorrectImf.classList.remove('hidden');
+
+                            }
+
+                        });
+                    </script>
 
                 </div>
                 
@@ -170,8 +226,8 @@
 
 
     
-    
-    <script src="./js/script.js"></script>
+    <script src="../assets/js/transfer.js"></script>
+    <!-- <script src="./js/script.js"></script> -->
     <!-- <script src="./js/transactions.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script src="https://kit.fontawesome.com/c76706220f.js" crossorigin="anonymous"></script>

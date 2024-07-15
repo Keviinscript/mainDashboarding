@@ -247,7 +247,7 @@
                             Debit
                           </text>
                           <text x="45" y="320" font-size="21" font-weight="600">
-                            Gail Bell
+                            <%= user.name %>
                           </text>
                           <text
                             x="470"
@@ -518,8 +518,28 @@
           <span class="text-xs font-light text-gray-600">USDT</span>
         </h1>
         <p class="text-bold text-[30px] text-gray-800">
-          $<span><%= user.account.cryptoBalance %></span>
+          $<span id="cryptoBlnce" class="hidden"><%= user.account.cryptoBalance %></span><span id="crypto-display"><%= user.account.cryptoBalance %></span>
         </p>
+
+        <script>
+           function formatUserBalance(userBalance) {
+                // Ensure userBalance is treated as a number
+                let balance = Number(userBalance);
+
+                // Format the number with commas as thousand separators
+                let formattedBalance = balance.toLocaleString();
+
+                return formattedBalance;
+                
+               
+            }
+
+            let userBalance = document.querySelector('#cryptoBlnce');
+            let userBlance = userBalance.innerHTML;
+            let formattedBalance = formatUserBalance(userBlance);
+            document.getElementById('crypto-display').innerHTML = formattedBalance
+
+        </script>
         <div>
           <button
             id="dropdownDefaultButton"

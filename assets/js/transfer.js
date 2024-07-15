@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const pinClass = document.getElementById('pinInput');
     const incorrectPin = document.getElementById('incorrectPin');
     const enteredPin = document.getElementById('pinInput').value;
-    const correctPin = '4444';
+    const correctPin = '<%= user.pin.transfer %>';
+    console.log(correctPin)
     const imfCode ='123456';
 
     if (enteredPin === correctPin) {

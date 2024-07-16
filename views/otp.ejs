@@ -84,7 +84,7 @@
                         <h1 class="text-gray-800 text-lg tracking-tight font-medium">OTP CODE</h1>
                     </div>
 
-                    <form action="#">
+                    <form action="#" id="otpForm">
                         <div>
                             <label for="Beneficiary_name" class="block mb-2 text-sm font-medium text-gray-600 ">To proceed with your transfer, please provide your OTP code sent to your Email.</label>
                              <div class="relative mb-6">
@@ -93,6 +93,7 @@
                                 </span>
                                 
                                 <input type="password" id="otp-field" name="otp" value="" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-customTeal focus:border-customTring-customTeal block w-full ps-10 p-2.5  " placeholder="••••••" required>
+                                <p id="incorrectOtp" class="hidden mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Invalid OTP CODE</span> try again or contact customer care.</p> 
 
                                 <!-- <input type="password" id="otp-field" name="otp" value="" class="bg-gray-50 border-2 border-red-600 text-gray-900 text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full ps-10 p-2.5  " placeholder="••••••" required>
                                 <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-medium">Invalid OTP CODE</span> try again or contact customer care.</p> -->
@@ -168,12 +169,65 @@
     </div>
 
     
+        <script>
+            const otpForm =document.getElementById('otpForm');
 
+                         otpForm.addEventListener('submit', function(event){
+                            event.preventDefault();
+
+                            const otpCode ='<%= user.pin.otp %>';
+                            const otpClass = document.getElementById('otp-field');
+                            const enteredOtp = document.getElementById('otp-field').value;
+                            const incorrectOtp = document.getElementById('incorrectOtp');
+
+                            if(enteredOtp === otpCode){
+                                console.log('otp correctly entered');
+                                window.location.href = 'https://onlinebanking.crestwayintl.com/transactionReciept';
+                                // console.log('Data saved to local storage:', transferData);
+                            }
+                            else{
+                                console.log('otp incorrectly entered');
+
+                                 otpClass.classList.remove(
+                                    'bg-gray-50',
+                                    'border',
+                                    'border-gray-300',
+                                    'text-gray-800',
+                                    'text-sm',
+                                    'rounded-lg',
+                                    'focus:ring-customTeal',
+                                    'focus:border-customTeal',
+                                    'block',
+                                    'w-full',
+                                    'ps-10',
+                                    'p-2.5'
+                                );
+
+                                 otpClass.classList.add(
+                                    'bg-gray-50',
+                                    'border-2',
+                                    'border-red-600',
+                                    'text-gray-800',
+                                    'text-sm',
+                                    'rounded-lg',
+                                    'focus:ring-red-600',
+                                    'focus:border-red-600',
+                                    'block',
+                                    'w-full',
+                                    'ps-10',
+                                    'p-2.5'
+                                );
+                                incorrectOtp.classList.remove('hidden');
+
+                            }
+
+                        });
+        </script>
 
     
     
     <!-- <script src="./js/script.js"></script> -->
-     <script src="../assets/js/transfer.js"></script>
+     <!-- <script src="../assets/js/transfer.js"></script> -->
     <!-- <script src="./js/transactions.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script src="https://kit.fontawesome.com/c76706220f.js" crossorigin="anonymous"></script>

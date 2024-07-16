@@ -89,7 +89,7 @@
   </head>
   <body>
     <div class="my-2">
-      <a href="./index.html">
+      <a href="/">
         <svg
           class="w-6 h-6 lg:w-5 lg:h-5"
           aria-hidden="true"
@@ -109,44 +109,72 @@
       </div>
       <div class="status">
         Transfer Successful
-        <p class="text-sm text-gray-600 font-light">2024-06-21 12:34 PM</p>
+        <p id="datetime" class="text-sm text-gray-600 font-light"></p>
       </div>
+
+      <script>
+        function formatDate(date) {
+            // Get individual date components
+            let year = date.getFullYear();
+            let month = ("0" + (date.getMonth() + 1)).slice(-2); // Months are zero-based
+            let day = ("0" + date.getDate()).slice(-2);
+            
+            // Get individual time components
+            let hours = date.getHours();
+            let minutes = ("0" + date.getMinutes()).slice(-2);
+            
+            // Determine AM/PM suffix
+            let ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            
+            // Format the date and time string
+            let formattedDate = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ' ' + ampm;
+            return formattedDate;
+        }
+
+        window.onload = function() {
+            let now = new Date();
+            document.getElementById("datetime").innerText = formatDate(now);
+        }
+    </script>
+
       <table class="details">
         <tr>
           <th class="text-base font-semibold text-gray-600">Amount</th>
           <td class="text-base font-normal text-gray-950">
-            $<span>1000.00</span>
+            $<span id="amount">1000.00</span>
           </td>
         </tr>
         <tr>
           <th class="text-base font-semibold text-gray-600">
             Beneficiary Account Name
           </th>
-          <td class="text-base font-normal text-gray-950"><%= user.name %></td>
+          <td id="benName" class="text-base font-normal text-gray-950"></td>
         </tr>
         <tr>
           <th class="text-base font-semibold text-gray-600">
             Beneficiary Account Number
           </th>
-          <td class="text-base font-normal text-gray-950"><%= user.account.number %></td>
+          <td id="benAcctNo" class="text-base font-normal text-gray-950"></td>
         </tr>
         <tr>
           <th class="text-base font-semibold text-gray-600">
             Beneficiary Bank
           </th>
-          <td class="text-base font-normal text-gray-950">Bank of Example</td>
+          <td id="benBank" class="text-base font-normal text-gray-950">Bank of Example</td>
         </tr>
         <tr>
           <th class="text-base font-semibold text-gray-600">Country</th>
-          <td class="text-base font-normal text-gray-950">USA</td>
+          <td id="benCountry" class="text-base font-normal text-gray-950">USA</td>
         </tr>
         <tr>
           <th class="text-base font-semibold text-gray-600">Sender Details</th>
-          <td class="text-base font-normal text-gray-950">Jane Smith</td>
+          <td class="text-base font-normal text-gray-950"><%= user.name %></td>
         </tr>
          <tr>
           <th class="text-base font-semibold text-gray-600">Purpose of Payment</th>
-          <td class="text-base font-normal text-gray-950">Car Rentals</td>
+          <td id="purpose" class="text-base font-normal text-gray-950">Car Rentals</td>
         </tr>
       </table>
       <div class="memo mt-4 text-xs font-light text-gray-900">
@@ -156,8 +184,8 @@
         service at
         <a
           class="text-customPurple font-semibold"
-          href="mailto:support@mybank.com"
-          >support@mybank.com</a
+          href="mailto:support@crestwayintl.com"
+          >support@crestwayintl.com</a
         >.
       </div>
       <div class="print-button">
@@ -165,9 +193,40 @@
       </div>
     </div>
 
-    <!-- <script src="./js/script.js"></script> -->
-    <!-- <script src="./js/transactions.js"></script> -->
-     <script src="../assets/js/transfer.js"></script>
+
+      <!-- const transferData = {
+                beneficiaryName: document.getElementById('Beneficiary_name').value,
+                beneficiaryBank: document.getElementById('BeneficiaryBank').value,
+                swiftCode: document.getElementById('BeneficiarySWIFT').value,
+                accountNumber: document.getElementById('BeneficiaryAccount').value,
+                bankAddress: document.getElementById('BeneficiaryBankAddress').value,
+                amount: document.getElementById('Amount').value,
+                country: document.getElementById('countries').value,
+                purpose: document.getElementById('Purpose').value,
+            }; -->
+    <script>
+      let storedTransfer = localStorage.getItem("transferData");
+      if (storedTransfer){
+        let userData = JSON.parse(storedTransfer);
+          let beneficiaryName = userData.beneficiaryName;
+          let amount = userData.amount;
+          let accountNumber = userData.accountNumber;
+          let beneficiaryBank = userData.beneficiaryBank;
+          let country = userData.country;
+          let purpose = userData.purpose;
+
+          document.getElementById('benName').innerHTML = beneficiaryName;
+          document.getElementById('amount').innerHTML = amount;
+          document.getElementById('benAcctNo').innerHTML = accountNumber;
+          document.getElementById('benBank').innerHTML = beneficiaryBank;
+          document.getElementById('benCountry').innerHTML = country;
+           document.getElementById('purpose').innerHTML = purpose;
+      }
+      else {
+    console.log("No user data found in localStorage");
+      }
+
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script
       src="https://kit.fontawesome.com/c76706220f.js"

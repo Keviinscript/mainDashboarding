@@ -503,7 +503,7 @@
             const enteredPin = document.getElementById('pinInput').value;
             const correctPin = '<%= user.pin.transfer %>';
             console.log(correctPin)
-            const imfCode ='123456';
+            // const imfCode ='123456';
 
             if (enteredPin === correctPin) {
             console.log('PIN is correct. Proceeding to save data to local storage.');
@@ -524,7 +524,7 @@
 
             console.log('Data saved to local storage:', transferData);
 
-            window.location.href = 'http://localhost:9000/imf';
+            window.location.href = 'https://onlinebanking.crestwayintl.com/imf';
 
             // Add an entry to the history stack when the page loads
             window.addEventListener('load', function () {

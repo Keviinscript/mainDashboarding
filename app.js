@@ -197,6 +197,15 @@ app.get('/transactionReciept',protectRoute, async (req, res) => {
   }
 });
 
+app.get('/getTransactions/:id', async (req,res)=>{
+    const id = req.params.id
+
+    const user = await userSchema.findById(id).populate('account').populate('pin').populate('transaction')
+    const transactions = user.transaction
+
+    res.send(transactions)
+})
+
 const port = process.env.PORT || 9000
 
 app.listen(port, ()=>{

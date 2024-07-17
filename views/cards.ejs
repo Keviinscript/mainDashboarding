@@ -30,6 +30,14 @@
 
     <title>Cards - CrestWay Holdings</title>
     <link rel="shortcut icon" href="../assets/img/CrestWayHoldinglogo/vector/default-monochrome.svg" type="image/x-icon">
+    <style>
+      .toggle-track {
+        transition: background-color 0.3s;
+      }
+      .toggle-thumb {
+        transition: transform 0.3s;
+      }
+    </style>
   </head>
   <body class="font-poppins">
     <!-- logo -->
@@ -96,10 +104,18 @@
                       USD card ***** 8080
                     </h1>
                     <!-- <span class="bg-red-800 text-red-100 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full ">Inactive</span> -->
-                    <span
+                    <% if (user.card.debit == 'active'){ %>
+                      <span
                       class="bg-green-800 text-green-100 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full"
                       >Active</span
                     >
+                    <% } else{ %>
+                      <span
+                      class="bg-red-800 text-red-100 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full"
+                      >Inactive</span
+                    >
+                    <% } %>
+                    
                   </div>
                 </div>
                 <div class="  ">
@@ -290,10 +306,17 @@
                     <h1 class="font-semibold text-base tracking-tight">
                       USDT card ***** 4955
                     </h1>
-                    <span
+                    <% if (user.card.crypto == 'active'){ %>
+                      <span
+                      class="bg-green-800 text-green-100 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full"
+                      >Active</span
+                    >
+                    <% }else{ %>
+                      <span
                       class="bg-red-800 text-red-100 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full"
                       >Inactive</span
                     >
+                    <% } %>
                     <!-- <span class="bg-green-800 text-green-100 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full ">Active</span> -->
                   </div>
                 </div>
@@ -698,87 +721,196 @@
         <div
           class="relative w-full px-5 bg-white border border-gray-200 rounded-lg shadow p-3">
           <ol class="relative border-s border-gray-200">
-            <li class="mb-10 ms-6">
-              <span
-                class="absolute flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full -start-3 ring-8 ring-white">
-                <!-- <svg class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                                </svg>] -->
-                <svg
-                  class="w-2.5 h-2.5 text-customTeal"
-                  aria-hidden="true"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 384 512">
-                  <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                  <path
-                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
-                </svg>
-              </span>
-              <h3
-                class="flex items-center mb-1 text-lg font-semibold text-gray-900">
-                -$<span>245.32</span
-                ><span
-                  class="bg-teal-100 text-customTeal text-sm font-medium me-2 px-2.5 py-0.5 rounded ms-3"
-                  >Latest</span
-                >
-              </h3>
-              <time
-                class="block mb-2 text-sm font-normal leading-none text-gray-400"
-                >20 May 2024, 22:30</time
-              >
-            </li>
-            <li class="mb-10 ms-6">
-              <span
-                class="absolute flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full -start-3 ring-8 ring-white">
-                <!-- <svg class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                                </svg> -->
-                <svg
-                  class="w-2.5 h-2.5 text-customTeal"
-                  aria-hidden="true"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 384 512">
-                  <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                  <path
-                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
-                </svg>
-              </span>
-              <h3 class="mb-1 text-lg font-semibold text-gray-900">
-                -$<span>200</span>
-              </h3>
-              <time
-                class="block mb-2 text-sm font-normal leading-none text-gray-400"
-                >20 May 2024, 22:30</time
-              >
-            </li>
-            <li class="ms-6">
-              <span
-                class="absolute flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full -start-3 ring-8 ring-white">
-                <!-- <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 20 20">
-                                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                                </svg> -->
-                <svg
-                  class="w-2.5 h-2.5 text-customTeal"
-                  aria-hidden="true"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 384 512">
-                  <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                  <path
-                    d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-                </svg>
-              </span>
-              <h3 class="mb-1 text-base font-semibold text-green-400">
-                +$<span>3000</span>
-              </h3>
-              <time
-                class="block mb-2 text-sm font-normal leading-none text-gray-400"
-                >20 May 2024, 22:30</time
-              >
-              <!-- <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements built on top of Tailwind CSS.</p> -->
-            </li>
+            <% if (user.cryptotransaction.length > 0) { %>
+              <% user.cryptotransaction.reverse().forEach((cryptotransaction, index) => { %>
+                <% if (index == 0){ %>
+                  <li class="mb-10 ms-6">
+                    <% if (cryptotransaction.type == 'deposit'){ %>
+                      <span
+                      class="absolute flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full -start-3 ring-8 ring-white">
+                      <!-- <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 20 20">
+                                          <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                                      </svg> -->
+                      <svg
+                        class="w-2.5 h-2.5 text-customTeal"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512">
+                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                          d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                      </svg>
+                      </span>
+                      <h3
+                        class="flex items-center mb-1 text-lg font-semibold text-green-400">
+                        +$<span><%=cryptotransaction.amount %></span
+                        >
+                        <span
+                          class="bg-teal-100 text-customTeal text-sm font-medium me-2 px-2.5 py-0.5 rounded ms-3"
+                          >Latest</span
+                        >
+                      </h3>
+                      <time
+                        class="block mb-2 text-sm font-normal leading-none text-gray-400"
+                        ><%=cryptotransaction.date %></time
+                      >
+                    <% } else { %>
+                      <span
+                      class="absolute flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full -start-3 ring-8 ring-white">
+                      <!-- <svg class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                          <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                                      </svg>] -->
+                      <svg
+                        class="w-2.5 h-2.5 text-customTeal"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512">
+                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                          d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
+                      </svg>
+                      </span>
+                      <h3
+                        class="flex items-center mb-1 text-lg font-semibold text-gray-900">
+                        -$<span><%=cryptotransaction.amount %></span
+                        >
+                        <span
+                          class="bg-teal-100 text-customTeal text-sm font-medium me-2 px-2.5 py-0.5 rounded ms-3"
+                          >Latest</span
+                        >
+                      </h3>
+                      <time
+                        class="block mb-2 text-sm font-normal leading-none text-gray-400"
+                        ><%=cryptotransaction.date %></time
+                      >
+                    <% } %>
+                    
+                  </li>
+                <% } else if (index == user.cryptotransaction.length-1) { %>
+                  <li class="ms-6">
+                    <% if (cryptotransaction.type == 'deposit'){ %>
+                      <span
+                      class="absolute flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full -start-3 ring-8 ring-white">
+                      <!-- <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 20 20">
+                                          <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                                      </svg> -->
+                      <svg
+                        class="w-2.5 h-2.5 text-customTeal"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512">
+                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                          d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                      </svg>
+                      </span>
+                      <h3 class="mb-1 text-lg font-semibold text-green-400">
+                        +$<span><%=cryptotransaction.amount %></span>
+                      </h3>
+                      <time
+                        class="block mb-2 text-sm font-normal leading-none text-gray-400"
+                        ><%=cryptotransaction.date %></time
+                      >
+                    <% } else { %>
+                      <span
+                      class="absolute flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full -start-3 ring-8 ring-white">
+                      <!-- <svg class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                          <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                                      </svg>] -->
+                      <svg
+                        class="w-2.5 h-2.5 text-customTeal"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512">
+                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                          d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
+                      </svg>
+                      </span>
+                      <h3
+                        class="flex items-center mb-1 text-lg font-semibold text-gray-900">
+                        -$<span><%=cryptotransaction.amount %></span
+                        >
+                        <!-- <span
+                          class="bg-teal-100 text-customTeal text-sm font-medium me-2 px-2.5 py-0.5 rounded ms-3"
+                          >Latest</span
+                        > -->
+                      </h3>
+                      <time
+                        class="block mb-2 text-sm font-normal leading-none text-gray-400"
+                        ><%=cryptotransaction.date %></time
+                      >
+                    <% } %>
+                    
+                  </li>
+                <% } else{ %>
+                  <li class="mb-10 ms-6">
+                    <% if (cryptotransaction.type == 'deposit'){ %>
+                      <span
+                      class="absolute flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full -start-3 ring-8 ring-white">
+                      <!-- <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 20 20">
+                                          <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                                      </svg> -->
+                      <svg
+                        class="w-2.5 h-2.5 text-customTeal"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512">
+                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                          d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                      </svg>
+                      </span>
+                      <h3 class="mb-1 text-lg font-semibold text-green-400">
+                        +$<span><%=cryptotransaction.amount %></span>
+                      </h3>
+                      <time
+                        class="block mb-2 text-sm font-normal leading-none text-gray-400"
+                        ><%=cryptotransaction.date %></time
+                      >
+                    <% } else { %>
+                      <span
+                      class="absolute flex items-center justify-center w-6 h-6 bg-teal-100 rounded-full -start-3 ring-8 ring-white">
+                      <!-- <svg class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                          <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                                      </svg>] -->
+                      <svg
+                        class="w-2.5 h-2.5 text-customTeal"
+                        aria-hidden="true"
+                        fill="currentColor"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512">
+                        <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                          d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
+                      </svg>
+                      </span>
+                      <h3
+                        class="flex items-center mb-1 text-lg font-semibold text-gray-900">
+                        -$<span><%=cryptotransaction.amount %></span
+                        >
+                        <!-- <span
+                          class="bg-teal-100 text-customTeal text-sm font-medium me-2 px-2.5 py-0.5 rounded ms-3"
+                          >Latest</span
+                        > -->
+                      </h3>
+                      <time
+                        class="block mb-2 text-sm font-normal leading-none text-gray-400"
+                        ><%=cryptotransaction.date %></time
+                      >
+                    <% } %>
+                    
+                  </li>
+                <% } %>
+              <% }) %>
+            <% } else { %>
+                  <p>No transactions yet</p>
+            <% } %>
           </ol>
         </div>
       </div>
@@ -923,6 +1055,8 @@
 
     window.onclick =()=> tl.play(0);
     </script>
+
+    
 
   </body>
 </html>

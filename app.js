@@ -11,6 +11,8 @@ const accountSchema = require('./schema/accountSchema')
 const pinSchema = require('./schema/pinSchema')
 const transactionSchema = require('./schema/transactionSchema')
 const userSchema = require('./schema/userSchema')
+const cryptoTransSchema = require('./schema/cryptoTransSchema')
+const cardSchema = require('./schema/cardSchema')
 
 
 const secretkey = process.env.SECRETKEY
@@ -132,7 +134,7 @@ app.get('/profile',protectRoute, async (req,res)=>{
 app.get('/cards', protectRoute, async (req,res)=>{
     try {
         const auser = req.user.user.email
-        const user = await userSchema.findOne({email: auser}).populate('pin').populate('transaction').populate('account')
+        const user = await userSchema.findOne({email: auser}).populate('pin').populate('transaction').populate('account').populate('cryptotransaction').populate('card')
         res.render('cards', {user: user})
     } catch (error) {
         console.log(error)

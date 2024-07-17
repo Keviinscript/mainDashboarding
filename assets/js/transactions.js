@@ -378,7 +378,9 @@ fetchData('localhost:3000/getTransactions/')
                                     }  tracking-tight ">
                                     ${
                                       t.type === 'deposit' ? '+' : '-'
-                                    }$${t.amount}
+                                    }$${new Intl.NumberFormat().format(
+                                      t.amount
+                                    )}
                                     
                                     </h2>
                                     <div>

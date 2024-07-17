@@ -99,7 +99,7 @@
                         <div class="text-white space-y-1">
                             <span class="text-xs uppercase font-extralight">Balance</span>
                             <span id="userBlnce" class="hidden"><%= user.account.balance%></span>
-                            <div class="text-2xl font-bold">$<span id="balance-display"></span></div>
+                            <div class="text-2xl font-bold">$<span id="balance-display"></span>.24</div>
                             <div class="w-full bg-gray-200 rounded-full h-1">
                                 <div class="bg-customTeal h-1 rounded-full" style="width: 85%"></div>
                             </div>
@@ -107,7 +107,7 @@
                         <div class="text-white space-y-1">
                             <span class="text-xs uppercase font-extralight">Withdrawals</span>
                              <span id="userWthdl" class="hidden"><%= user.account.withdrawals%></span>
-                            <div class="text-2xl font-bold">$<span id="withdrawal-display" ></span></div>
+                            <div class="text-2xl font-bold">$<span id="withdrawal-display" ></span>.52</div>
                             <div class="w-full bg-gray-200 rounded-full h-1">
                                 <div class="bg-customTeal h-1 rounded-full" style="width: 25%"></div>
                             </div>
@@ -469,7 +469,9 @@ function displayTransactions(eachTransaction) {
                                   }  tracking-tight ">
                                   ${
                                     t.type === 'deposit' ? '+' : '-'
-                                  }$${t.amount}
+                                  }$${new Intl.NumberFormat().format(
+                                      t.amount
+                                    )}
                                   
                                   </h2>
                                   <div>

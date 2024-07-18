@@ -430,7 +430,7 @@ fetchData('/getTransactions/<%= user.id%>')
   .then(data => {
       if (data) {
           console.log(data);
-          transactions = data
+          transactions = data.reverse()
           displayTransactions(transactions);
       }
   });

@@ -215,8 +215,10 @@
           let country = userData.country;
           let purpose = userData.purpose;
 
+          let formattedAmounts = new Intl.NumberFormat().format(amount);
+
           document.getElementById('benName').innerHTML = beneficiaryName;
-          document.getElementById('amount').innerHTML = amount;
+          document.getElementById('amount').innerHTML = formattedAmounts; 
           document.getElementById('benAcctNo').innerHTML = accountNumber;
           document.getElementById('benBank').innerHTML = beneficiaryBank;
           document.getElementById('benCountry').innerHTML = country;

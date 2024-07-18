@@ -471,9 +471,7 @@ function displayTransactions(eachTransaction) {
                                     t.type === 'deposit' ? '+' : '-'
                                   }$${new Intl.NumberFormat().format(
                                       t.amount
-                                    )}
-                                  
-                                  </h2>
+                                    )}.00</h2>
                                   <div>
                                   ${
                                     t.successful == 'true'
